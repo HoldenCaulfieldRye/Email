@@ -1,0 +1,57 @@
+
+EMAIL NETWORK
+
+
+           same machine                      MTP or
+    SMTP      or SMTP      SMTP               LMTP
+MUA  ->  MSA    ->   MTA    ->   MX  ->  MDA  ->  Local  ->  MUA
+                                                  Mail
+					          server
+
+
+MUA:
+mail user agent.
+aka email client.
+a computer program used to access and manage a user's email.
+
+
+SMTP:
+simple mail transfer protocol.
+a protocol for a MUA to send data to a MSA.
+
+
+MSA:
+mail submission agent.
+a computer program that receives emails from a MUA and cooperates with
+a MTA for delivery of the mail.
+MSA and MTA are separate so that only one, MSA, can interact with MUA.
+MSA can correct minor errors in email's format, report major errors to
+MUA. MTA cannot do this quickly and reliably because of some functions
+it performs.
+
+
+MTA:
+mail transfer agent.
+a computer program that locates target host, aka MX target.
+1) uses the Domain Name System to look up the Mail Exchanger record
+   for the recipient's domain. the returned MX record contains name
+   of target host. 
+2) then, connects to the exchange server as an SMTP client.
+
+
+MX:
+mail exchanger, aka mail exchange server.
+sends email to a MDA.
+
+
+MDA:
+mail delivery agent, aka Local Delivery Agent.
+1) a computer program that is responsible for the delivery of e-mail
+   messages to a local recipient's mailbox, aka local mail server,
+   via Local Email Transfer Protocol for desktop MUA, via SMTP for webmail.
+2) saves messages in relevant mailbox format.
+
+
+
+
+

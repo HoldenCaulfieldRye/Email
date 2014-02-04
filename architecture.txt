@@ -1,0 +1,31 @@
+
+Problems:
+- what is the class structure for emails? need to work with that
+- which language should this be written in? php, ruby?
+
+
+MailBox:
+threads: map<string _key, Thread _threads>
+
+
+Thread:
+emails: map<string _key, Email _emails>
+icon:
+participants: string[]                   //display parameter
+topics: map<int[] topicKey, string name> //display parameter
+subEmails: map<topicKey, string body>    //display parameter
+---
+void open()                //uses new UI to display messages in new window (better: FB photo view)
+int getParticipants(users) //iterates through emails to assign participants field
+
+void getTopics()           //iterates though emails to assign topics field
+
+
+Email:
+body: string
+sender: string
+receiver: string
+topics: 
+
+
+
